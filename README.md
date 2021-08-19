@@ -1,13 +1,19 @@
 # BS-Notify
 
-Program I made to notify me to measure my blood sugar every two hours. Writen in python3, for Mac OSX requiring no external libraries.
+Program I made to notify me to measure my blood sugar every two hours. Writen in bash, for Mac OSX requiring no external libraries.
 
 ## Usage
 
-This can be run in the background using:
+Create or edit your crontab file to allow the script to be run every two hours
 
-```shell
-python3 bsnotify.py &amp;
+```bash
+crontab -e
 ```
 
-To look for the script run the `ps` command and to kill the script run `kill <ID>`.
+In the crontab file add this line, where you replace the path with the notify script you just cloned
+
+```bash
+0 */2 * * * <path/to/script>
+```
+
+Save the file and your done!
